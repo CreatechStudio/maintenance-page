@@ -1,136 +1,208 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title data-react-helmet="true">HTTP 502 - Server Maintenance</title>
-    <meta charset="utf-8">
-    <title>HTTP 502 - Server Maintenance</title>
-    <link rel="stylesheet" href="https://cloud-control-error.atcrea.tech/style.css">
-    <link rel="icon" type="image/png" href="./favicon.png">
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cloud-control-error.atcrea.tech/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Error</title>
+    <link rel="icon" type="image/png" href="https://cdn.createchstudio.com/CreatechStudioLogo/512.png">
+    <link href="https://fonts.cdnfonts.com/css/current" rel="stylesheet">
+    <style>
+        /* Reusing Standard Color Palette */
+        :root {
+            --color-text-main: #1f2937;
+            --color-text-muted: #6b7280;
+            --color-text-label: #374151;
+            --color-bg-card: #ffffff;
+            --color-ring: rgba(17, 24, 39, 0.05);
+            --color-divider: #e5e7eb;
+            --color-brand: #40619A;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-text-main: #f3f4f6;
+                --color-text-muted: #9ca3af;
+                --color-text-label: #d1d5db;
+                --color-bg-card: #18181b;
+                --color-ring: rgba(255, 255, 255, 0.1);
+                --color-divider: #3f3f46;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            font-family: ui-sans-serif, system-ui, sans-serif;
+            background-color: #000;
+        }
+
+        .bg-wrapper {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .bg-image {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://cdn.createchstudio.com/CreatechStudioLogo/login.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .bg-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+        }
+
+        .main-container {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 480px;
+            border-radius: 1rem;
+            background-color: var(--color-bg-card);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            padding: 2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        @media (min-width: 640px) {
+            .card {
+                padding: 2.5rem;
+            }
+        }
+
+        .logo {
+            height: 3.5rem;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 2rem;
+        }
+
+        .logo-light {
+            display: block;
+        }
+
+        .logo-dark {
+            display: none;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .logo-light {
+                display: none;
+            }
+
+            .logo-dark {
+                display: block;
+            }
+        }
+
+        .instruction p {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--color-text-main);
+            margin: 0 0 1.5rem 0;
+        }
+
+        .cf-error-box {
+            width: 100%;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            word-break: break-all;
+        }
+
+        .divider {
+            height: 1px;
+            width: 100%;
+            background-color: var(--color-divider);
+            margin: 1.5rem 0;
+        }
+
+        .footer p {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            margin: 0;
+            text-align: left;
+        }
+
+        @media (min-width: 640px) {
+            .footer p {
+                text-align: left;
+            }
+        }
+
+        .brand-text {
+            font-family: 'Current', sans-serif;
+            font-weight: 700;
+            color: var(--color-brand);
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="error">
-            <div class="col-L">
-                <img src="https://cdn.createchstudio.com/CreatechStudioLogo/CreatechStudio-small-xtext.png" height="72" alt="CreatechStudio Logo">
-                <h1>Service Error</h1>
-                <h2>Server is under maintenance.</h2>
-                <hr>
-                <p>We hope to be back online very soon. Thank you for your patience and we apologize for any inconvenience caused.</p>
-                <p>Error Code: ERR_OS_SERVER_MAINTENANCE</p>        
-              </div>
-        </div>
-        <div class="stack-container">
-            <div class="card-container">
-                <div class="perspec" style="--spreaddist: 125px; --scaledist: .75; --vertdist: -25px;">
-                    <div class="card">
-                        <div class="writing">
-                            <div class="topbar">
-                                <div class="red"></div>
-                                <div class="yellow"></div>
-                                <div class="green"></div>
-                            </div>
-                            <div class="code">
-                                <ul>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-container">
-                <div class="perspec" style="--spreaddist: 100px; --scaledist: .8; --vertdist: -20px;">
-                    <div class="card">
-                        <div class="writing">
-                            <div class="topbar">
-                                <div class="red"></div>
-                                <div class="yellow"></div>
-                                <div class="green"></div>
-                            </div>
-                            <div class="code">
-                                <ul>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-container">
-                <div class="perspec" style="--spreaddist:75px; --scaledist: .85; --vertdist: -15px;">
-                    <div class="card">
-                        <div class="writing">
-                            <div class="topbar">
-                                <div class="red"></div>
-                                <div class="yellow"></div>
-                                <div class="green"></div>
-                            </div>
-                            <div class="code">
-                                <ul>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-container">
-                <div class="perspec" style="--spreaddist: 50px; --scaledist: .9; --vertdist: -10px;">
-                    <div class="card">
-                        <div class="writing">
-                            <div class="topbar">
-                                <div class="red"></div>
-                                <div class="yellow"></div>
-                                <div class="green"></div>
-                            </div>
-                            <div class="code">
-                                <ul>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-container">
-                <div class="perspec" style="--spreaddist: 25px; --scaledist: .95; --vertdist: -5px;">
-                    <div class="card">
-                        <div class="writing">
-                            <div class="topbar">
-                                <div class="red"></div>
-                                <div class="yellow"></div>
-                                <div class="green"></div>
-                            </div>
-                            <div class="code">
-                                <ul>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-container">
-                <div class="perspec" style="--spreaddist: 0px; --scaledist: 1; --vertdist: 0px;">
-                    <div class="card">
-                        <div class="writing">
-                            <div class="topbar">
-                                <div class="red"></div>
-                                <div class="yellow"></div>
-                                <div class="green"></div>
-                            </div>
-                            <div class="code">
-                                <ul>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    <div class="bg-wrapper">
+        <div class="bg-image"></div>
+        <div class="bg-overlay"></div>
     </div>
+    <div class="main-container">
+        <div class="card">
+            <div style="display: flex;">
+                <img src="https://cdn.createchstudio.com/CreatechStudioLogo/CreatechStudio-xtext.png"
+                    class="logo logo-light">
+                <img src="https://cdn.createchstudio.com/CreatechStudioLogo/CreatechStudio-xtext-white.png"
+                    class="logo logo-dark">
+            </div>
+            <div class="instruction">
+                <p id="error-msg">System Under Maintenance</p>
+            </div>
+            <!-- Cloudflare Error 500s Placeholder -->
+            <div class="cf-error-box">
+                We're currently performing scheduled maintenance.
+            </div>
+            <div class="cf-error-box">
+                We apologize for any inconvenience and appreciate your patience.
+            </div>
+            <div class="cf-error-box">
+                Please check back later.
+            </div>
+            <div class="divider"></div>
+            <div class="footer">
+                <p>Secured by <span class="brand-text">Createch Intelligence</span> Edge Security</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang && userLang.toLowerCase().startsWith('zh')) {
+                document.getElementById('error-msg').textContent = "出错了";
+            }
+        });
+    </script>
 </body>
-<script src="https://cloud-control-error.atcrea.tech/main.js"></script>
+
 </html>
